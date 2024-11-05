@@ -268,14 +268,13 @@ Select::make('author_id')
 
 ### Saving pivot data to the relationship
 
-If you're using a `multiple()` relationship and your pivot table has additional columns, you can use the `pivotData()` method to specify the data that should be saved in them:
+If your pivot table has additional columns, you can use the `pivotData()` method to specify the data that should be saved in them:
 
 ```php
 use Filament\Forms\Components\Select;
 
 Select::make('primaryTechnologies')
     ->relationship(name: 'technologies', titleAttribute: 'name')
-    ->multiple()
     ->pivotData([
         'is_primary' => true,
     ])
